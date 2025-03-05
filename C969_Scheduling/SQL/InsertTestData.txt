@@ -1,0 +1,10 @@
+﻿INSERT INTO user (userName, password, active, createDate, createdBy, lastUpdate, lastUpdateBy)
+VALUES ('test', 'test', 1, NOW(), 'system', NOW(), 'system');
+
+
+INSERT INTO country (country, createDate, createdBy, lastUpdate, lastUpdateBy) 
+VALUES (@Country, @CreateDate, @CreatedBy, @LastUpdate, @LastUpdateBy);
+SELECT LAST_INSERT_ID();
+
+
+UPDATE country SET country = @Country, lastUpdate = @LastUpdate, lastUpdateBy = @LastUpdateBy WHERE  countryid = @CountryId;
