@@ -169,6 +169,9 @@ namespace C969_Scheduling.Helpers
 
         private bool IsWithinWorkingHours(DateTime dateTime)
         {
+            
+            DateTime estDateTime = GlobalHelpers.TimezoneHelper.ConvertToEST(dateTime);
+
             // Check if the date is on a weekend
             if (dateTime.DayOfWeek == DayOfWeek.Saturday || dateTime.DayOfWeek == DayOfWeek.Sunday)
             {
