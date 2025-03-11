@@ -40,6 +40,12 @@ namespace C969_Scheduling
 
         private void llblLanguage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            //This function overrides the the location automaticlly being set at application start in Program.cs
+            //Allows user to switch Between Enlish and Spanish. For Automatic Setting, please view cs line 33-35
+            //Location is based on current location of computer running the application
+            //Language Helper holds the call to validate the location from an ip evaluation at https://ipinfo.io/json
+
+
             string userCulture = GlobalHelpers.LanguageHelper.SwitchUserCulture();
             Thread.CurrentThread.CurrentCulture = new CultureInfo(userCulture);
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(userCulture);

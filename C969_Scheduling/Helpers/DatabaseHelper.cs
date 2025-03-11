@@ -532,6 +532,7 @@ namespace C969_Scheduling.Helpers
                 cmd.Parameters.AddWithValue(Constants.AppointmentParameters.LastUpdate, DateTime.UtcNow);
                 cmd.Parameters.AddWithValue(Constants.AppointmentParameters.CreatedBy, GlobalHelpers.CurrentUser.Username);
                 cmd.Parameters.AddWithValue(Constants.AppointmentParameters.LastUpdateBy, GlobalHelpers.CurrentUser.Username);
+                cmd.Parameters.AddWithValue(Constants.AppointmentParameters.UserId, GlobalHelpers.CurrentUser.UserId);
                 return cmd.ExecuteNonQuery();
             }
             catch (Exception ex)

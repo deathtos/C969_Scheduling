@@ -19,7 +19,7 @@
             public const string GetAllUpcommingAppointments = "SELECT a.appointmentId, a.customerId, a.title, a.description, a.location, a.contact, a.type, a.start, a.end, a.url FROM appointment a WHERE a.start > now()";
             public const string GetAllAppointments = "SELECT a.appointmentId, a.customerId, a.title, a.description, a.location, a.contact, a.type, a.start, a.end, a.url, a.createdBy FROM appointment a ";
             public const string GetAllAppointmentsByDateRange = "SELECT a.appointmentId, a.customerId, a.title, a.description, a.location, a.contact, a.type, a.start, a.end, a.url FROM appointment a WHERE ((a.start >= @start) AND (a.end <= @end))";
-            public const string AddAppointment = "INSERT INTO appointment (title, description, location, contact, type, url, start, end, customerId, createDate, createdBy, lastUpdate, lastUpdateBy) VALUES (@title, @description, @location, @contact, @type, @url, @start, @end, @customerId, @createDate, @createdBy, @lastUpdate, @lastUpdateBy)";
+            public const string AddAppointment = "INSERT INTO appointment (title, description, location, contact, type, url, start, end, customerId, createDate, createdBy, lastUpdate, lastUpdateBy, userId) VALUES (@title, @description, @location, @contact, @type, @url, @start, @end, @customerId, @createDate, @createdBy, @lastUpdate, @lastUpdateBy, @userId)";
             public const string UpdateAppointment = "UPDATE appointment SET title = @title, description = @description, location = @location, contact = @contact, type = @type, url = @url, start = @start, end = @end, customerId = @customerId, lastUpdate = @lastUpdate, lastUpdateBy = @lastUpdateBy WHERE appointmentId = @appointmentId";
             public const string DeleteAppointment = "DELETE FROM appointment WHERE appointmentId = @appointmentId";
             public const string ValidateTimeblock = "SELECT COUNT(*) FROM appointment WHERE ((start BETWEEN @start AND @end) OR (end BETWEEN @start AND @end) OR (@start BETWEEN start AND end) OR (@end BETWEEN start AND end)) AND appointmentid != @appointmentid";
@@ -109,6 +109,7 @@
             public const string CreatedBy = "@createdBy";
             public const string LastUpdate = "@lastUpdate";
             public const string LastUpdateBy = "@lastUpdateBy";
+            public const string UserId = "@userId";
         }
 
         public class AddressParameters

@@ -21,7 +21,7 @@ namespace C969_Scheduling.Helpers
 
             if(GlobalHelpers.DbHelper.VerifyLogin(invalidatedUser))
             {
-                GlobalHelpers.SetCurrentUser(invalidatedUser);
+                GlobalHelpers.SetCurrentUser(invalidatedUser, GlobalHelpers.DbHelper.GetUserId(invalidatedUser));
 
                 GlobalHelpers.FileHelper.WriteToLoginHistoryFile($"User {username} logged in at {DateTime.UtcNow} UTC");
                 return true;

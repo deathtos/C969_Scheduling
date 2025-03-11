@@ -44,8 +44,9 @@ namespace C969_Scheduling.Helpers
                 _reportHelper = new ReportHelper();
             }
         }
-        public static void SetCurrentUser(User user)
+        public static void SetCurrentUser(User user, int userId)
         {
+            user.UserId = userId;
             _currentUser = user;
         }
         public static void SetUserLocationInfo(IpInfo userLocationInfo)
