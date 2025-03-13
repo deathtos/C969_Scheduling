@@ -28,7 +28,7 @@ namespace C969_Scheduling
 
             GlobalHelpers.Initialize(appsettings);
 
-            //string userCulture = GlobalHelpers.LanguageHelper.GetUserCultureAsync().Result;
+            string location = GlobalHelpers.LanguageHelper.GetUserCultureAsync().Result;
             string userCulture = RegionInfo.CurrentRegion.TwoLetterISORegionName;
             Thread.CurrentThread.CurrentCulture = new CultureInfo(userCulture);
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(userCulture);
