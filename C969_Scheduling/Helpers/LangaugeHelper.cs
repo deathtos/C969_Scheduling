@@ -1,4 +1,5 @@
 ﻿using C969_Scheduling.ProcessModels;
+using System.Globalization;
 using System.Text.Json;
 
 namespace C969_Scheduling.Helpers
@@ -6,6 +7,46 @@ namespace C969_Scheduling.Helpers
     public class LangaugeHelper
     {
         private string _userCulture;
+
+        public string SetUserCulture()
+        {
+            _userCulture = RegionInfo.CurrentRegion.Name;
+
+            IpInfo ipInfo = new IpInfo()
+            {
+                Ip = string.Empty,
+                Hostname = string.Empty,
+                Region = RegionInfo.CurrentRegion.Name,
+                Country = RegionInfo.CurrentRegion.NativeName,
+                Loc = string.Empty,
+                Org = string.Empty,
+                Postal = string.Empty,
+                Timezone = string.Empty,
+                Readme = string.Empty
+            };
+
+            GlobalHelpers.SetUserLocationInfo(ipInfo);
+
+            try
+            {
+                // Map the country code to a culture
+                switch (_userCulture)
+                {
+                    case "ES":
+                        return "es-ES";
+                    case "US":
+                        return "en-US";
+                    // Add more mappings as needed
+                    default:
+                        return "en-US";
+                }
+            }
+            catch (Exception)
+            {
+                // Default to English if there is an error
+                return "en-US";
+            }
+        }
 
         public async Task<string> GetUserCultureAsync()
         {

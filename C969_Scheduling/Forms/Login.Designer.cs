@@ -48,7 +48,7 @@ namespace C969_Scheduling
             lblWelcome.Name = "lblWelcome";
             lblWelcome.Size = new Size(90, 25);
             lblWelcome.TabIndex = 0;
-            lblWelcome.Text = "Welcome ";
+            lblWelcome.Text = Properties.Resources.lblWelcome;
             // 
             // btnSignIn
             // 
@@ -81,7 +81,7 @@ namespace C969_Scheduling
             lblUsername.Name = "lblUsername";
             lblUsername.Size = new Size(91, 25);
             lblUsername.TabIndex = 4;
-            lblUsername.Text = "Username";
+            lblUsername.Text = Properties.Resources.lblUsername;
             // 
             // lblPassword
             // 
@@ -90,7 +90,7 @@ namespace C969_Scheduling
             lblPassword.Name = "lblPassword";
             lblPassword.Size = new Size(87, 25);
             lblPassword.TabIndex = 5;
-            lblPassword.Text = "Password";
+            lblPassword.Text = Properties.Resources.lblPassword;
             // 
             // lblLocation
             // 
@@ -99,7 +99,7 @@ namespace C969_Scheduling
             lblLocation.Name = "lblLocation";
             lblLocation.Size = new Size(79, 25);
             lblLocation.TabIndex = 6;
-            lblLocation.Text = "Location";
+            lblLocation.Text = Properties.Resources.lblLocation;
             // 
             // llblLanguage
             // 
@@ -109,7 +109,7 @@ namespace C969_Scheduling
             llblLanguage.Size = new Size(74, 25);
             llblLanguage.TabIndex = 7;
             llblLanguage.TabStop = true;
-            llblLanguage.Text = "Spanish";
+            llblLanguage.Text = Properties.Resources.lblLanguage;
             llblLanguage.LinkClicked += llblLanguage_LinkClicked;
             // 
             // Login
